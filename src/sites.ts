@@ -11,6 +11,11 @@ export function isLocalHost(host = hostnameNow()) {
   return host === "localhost" || host === "127.0.0.1" || host.endsWith(".localhost");
 }
 
+/** Vercel preview/production URL — dar be silta.lt DNS, vitrinos eina per /silta. */
+export function usesPathShops(host = hostnameNow()) {
+  return isLocalHost(host) || host.endsWith(".vercel.app");
+}
+
 export function getShopFromHost(host = hostnameNow()): Shop | undefined {
   return shops.find((s) => host === s.domain || host === `${s.id}.localhost`);
 }
@@ -42,7 +47,7 @@ export function shopHref(shopId: ShopId, path = "/") {
   const p = path.startsWith("/") ? path : `/${path}`;
   const hosted = getShopFromHost();
   if (hosted?.id === shopId) return p === "/" ? "/" : p;
-  if (isLocalHost()) return shopLocalPath(shopId, p);
+  if (usesPathShops()) return shopLocalPath(shopId, p);
   return shopLiveUrl(shop, p);
 }
 

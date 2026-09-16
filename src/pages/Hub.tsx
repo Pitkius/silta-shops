@@ -2,7 +2,7 @@ import { shopProducts, formatEur } from "../data/products";
 import { loadEvents } from "../data/analytics";
 import { loadOrders } from "../data/orders";
 import { HqChrome } from "../HqChrome";
-import { HQ_DOMAIN, shopHref } from "../sites";
+import { HQ_DOMAIN, shopHref, usesPathShops } from "../sites";
 import { shops } from "../shops";
 import { SmartLink } from "../useShop";
 
@@ -58,7 +58,7 @@ export default function Hub() {
                     <span className="badge">{s.domain}</span>
                     <strong>{s.wordmark}</strong>
                     <span className="muted">{s.tagline}</span>
-                    <span className="muted">{n} prekės · dabar /{s.id}</span>
+                    <span className="muted">{n} prekės · {usesPathShops() ? `/${s.id}` : s.domain}</span>
                     <span className="badge">Atidaryti →</span>
                   </div>
                 </SmartLink>
