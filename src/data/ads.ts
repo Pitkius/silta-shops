@@ -31,7 +31,7 @@ export const ads: Ad[] = [
       "5–10s: LED įsijungia, tekstas: „3 temperatūros. 200 g.“",
       "10–16s: eina, šypsosi, kaina 34,90 €, CTA „Užsakyti į paštomatą“.",
     ],
-    image: "/images/ad-scarf-ugc.jpg",
+    image: "/images/product-scarf.jpg",
     ratio: "9:16",
   },
   {
@@ -49,7 +49,7 @@ export const ads: Ad[] = [
       "3–8s: iš kišenės — du šildytuvai, sukimba magnetu.",
       "8–14s: delnai aplink, LED, kaina, paštomatas.",
     ],
-    image: "/images/ad-warmers-ugc.jpg",
+    image: "/images/product-warmers.jpg",
     ratio: "9:16",
   },
   {
@@ -67,7 +67,7 @@ export const ads: Ad[] = [
       "3–8s: parodo USB laidą į kišenę, zonos ant krūtinės.",
       "8–16s: eina be pūkinės, kaina, dydžių pastaba.",
     ],
-    image: "/images/ad-vest-ugc.jpg",
+    image: "/images/product-vest.jpg",
     ratio: "9:16",
   },
   {
@@ -81,7 +81,7 @@ export const ads: Ad[] = [
     description: "ŠILTA · Lietuva · paštomatas",
     cta: "Learn more",
     script: ["Statinis 1:1: šalikė + šildytuvai + pirštinės. Kaina ir paštomatas viršuje."],
-    image: "/images/ad-gift-flatlay.jpg",
+    image: "/images/product-scarf-2.jpg",
     ratio: "1:1",
   },
   {
@@ -113,7 +113,7 @@ export const ads: Ad[] = [
     description: "Lietuviškas +370 · 14 d. grąžinimas",
     cta: "Shop now",
     script: ["Tekstinė reklama su UGC kadrų. Jokio angliško „OMG“."],
-    image: "/images/ad-scarf-ugc.jpg",
+    image: "/images/product-scarf.jpg",
     ratio: "4:5",
   },
   {
@@ -127,7 +127,7 @@ export const ads: Ad[] = [
     description: "Nemokamai į paštomatą",
     cta: "Shop now",
     script: ["Nenaudoti netikrų −70 %. Viena tikra kaina, viena data."],
-    image: "/images/ad-gift-flatlay.jpg",
+    image: "/images/product-scarf-2.jpg",
     ratio: "1:1",
   },
   {
@@ -144,7 +144,7 @@ export const ads: Ad[] = [
       "UGC: virtuvė, lietuviškas balsas, unbox, delnai.",
       "Pabaiga: „nuoroda profilyje / čia apačioje“.",
     ],
-    image: "/images/ad-warmers-ugc.jpg",
+    image: "/images/product-warmers.jpg",
     ratio: "9:16",
   },
   {
@@ -158,7 +158,7 @@ export const ads: Ad[] = [
     description: "Iki Advento.",
     cta: "Shop now",
     script: ["Naktis, siena tamsi, įjungia, snaigės, kaina."],
-    image: "/images/ad-projector-ugc.jpg",
+    image: "/images/product-snow-projector.jpg",
     ratio: "9:16",
   },
   {
