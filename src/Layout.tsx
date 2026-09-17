@@ -1,14 +1,23 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useCart } from "./cart";
-import { hqHref } from "./sites";
-import { SmartLink, useHref, useShop } from "./useShop";
+import { useHref, useShop } from "./useShop";
 
 export default function Layout() {
   const shop = useShop();
   const href = useHref();
   const { count } = useCart();
+  const loc = useLocation();
+
   return (
-    <div data-shop={shop.id}>
+    <div className="shop-shell" data-shop={shop.id}>
+      <div className="atmosphere" aria-hidden="true">
+        <i />
+        <i />
+        <i />
+        <i />
+        <i />
+        <i />
+      </div>
       <div className="topbar">{shop.topbar}</div>
       <header className="header">
         <div className="wrap header-row">
@@ -22,7 +31,6 @@ export default function Layout() {
                 {n.label}
               </NavLink>
             ))}
-            <SmartLink to={hqHref("/")}>Visos parduotuvės</SmartLink>
           </nav>
           <div className="header-actions">
             <Link to={href("/krepselis")} className="icon-btn filled">
@@ -32,7 +40,9 @@ export default function Layout() {
           </div>
         </div>
       </header>
-      <Outlet />
+      <main className="page" key={loc.pathname}>
+        <Outlet />
+      </main>
       <footer className="footer">
         <div className="wrap footer-grid">
           <div>
@@ -40,9 +50,7 @@ export default function Layout() {
               {shop.wordmark}
               <span>.</span>
             </div>
-            <p className="muted" style={{ color: "var(--ice)" }}>
-              {shop.tagline}
-            </p>
+            <p className="muted footer-tag">{shop.tagline}</p>
           </div>
           <div>
             <strong>Parduotuvė</strong>
@@ -57,11 +65,9 @@ export default function Layout() {
           <div>
             <strong>Kita</strong>
             <p>
-              <SmartLink to={hqHref("/")}>Kitos parduotuvės</SmartLink>
-              <br />
               <Link to={href("/dovanos")}>Dovanos</Link>
               <br />
-              <Link to={href("/reklamos")}>Reklamos</Link>
+              <Link to={href("/privatumas")}>Privatumas</Link>
             </p>
           </div>
           <div>

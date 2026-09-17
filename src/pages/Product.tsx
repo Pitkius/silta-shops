@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useCart } from "../cart";
 import { formatEur, getShopProduct, shopProducts } from "../data/products";
+import { ProductCard } from "../ProductCard";
 import { useHref, useShop } from "../useShop";
 
 export default function Product() {
@@ -14,12 +15,14 @@ export default function Product() {
   const [size, setSize] = useState(product?.sizes?.[0]);
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
+  const [shot, setShot] = useState(0);
 
   useEffect(() => {
     setColor(product?.colors?.[0]);
     setSize(product?.sizes?.[0]);
     setQty(1);
     setAdded(false);
+    setShot(0);
   }, [slug, product]);
 
   if (!product) {
@@ -31,18 +34,30 @@ export default function Product() {
     );
   }
 
-  const related = shopProducts(shop.id).filter((p) => p.slug !== product.slug).slice(0, 3);
+  const related = shopProducts(shop.id).filter((p) => p.slug !== product.slug).slice(0, 6);
+  const photos = product.gallery;
+  const main = photos[Math.min(shot, photos.length - 1)] || product.image;
 
   return (
     <>
       <div className="wrap pdp">
         <div className="gallery">
-          <img className="main" src={product.gallery[0]} alt={product.name} />
-          {product.gallery.slice(1).map((src) => (
-            <img key={src} src={src} alt="" />
-          ))}
+          <div className="stage">
+            <img className="main" src={main} alt={product.name} />
+          </div>
+          {photos.length > 1 && (
+            <div className="gallery-thumbs">
+              {photos.map((src, i) => (
+                <button key={src} className={i === shot ? "on" : ""} onClick={() => setShot(i)} type="button">
+                  <span className="shot">
+                    <img src={src} alt="" />
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
-        <div>
+        <div className="pdp-info">
           {product.badge && <div className="badge">{product.badge}</div>}
           <h1>{product.name}</h1>
           <p className="muted">{product.short}</p>
@@ -50,7 +65,11 @@ export default function Product() {
             {formatEur(product.price)}
             <span className="compare">{formatEur(product.compareAt)}</span>
           </p>
-          <p>{product.description}</p>
+          <div className="pdp-copy">
+            {product.description.split("\n\n").map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
           <p className="muted">{product.story}</p>
           <p>
             <strong>{product.power}</strong>
@@ -85,6 +104,22 @@ export default function Product() {
             </>
           )}
 
+          {product.includes && product.includes.length > 0 && (
+            <>
+              <div className="muted" style={{ marginTop: 18 }}>
+                Kas dėžutėje
+              </div>
+              <ul className="includes">
+                {product.includes.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          <div className="muted" style={{ marginTop: 8 }}>
+            Savybės
+          </div>
           <ul>
             {product.features.map((f) => (
               <li key={f}>{f}</li>
@@ -131,15 +166,9 @@ export default function Product() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <h2>Kartu ima ir tai</h2>
-          <div className="grid-3">
+          <div className={`grid-3 ${shop.id === "ramu" ? "air" : ""}`}>
             {related.map((p) => (
-              <Link to={href(`/p/${p.slug}`)} className="card" key={p.slug}>
-                <img src={p.image} alt={p.name} />
-                <div className="card-body">
-                  <strong>{p.name}</strong>
-                  <div className="price">{formatEur(p.price)}</div>
-                </div>
-              </Link>
+              <ProductCard key={p.slug} product={p} to={href(`/p/${p.slug}`)} compact />
             ))}
           </div>
         </div>

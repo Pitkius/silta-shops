@@ -27,7 +27,9 @@ export default function CartPage() {
                   return (
                     <tr key={i.slug + i.color + i.size}>
                       <td>
-                        <img src={p.image} alt="" />
+                        <div className="shot shot-sm">
+                          <img src={p.image} alt="" />
+                        </div>
                       </td>
                       <td>
                         <strong>{p.name}</strong>

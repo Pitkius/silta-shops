@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /analitika
+Disallow: /uzsakymai
+Disallow: /reklamos
+Disallow: /tiekejai
+Allow: /silta
+Allow: /ramu
+Allow: /ziburys

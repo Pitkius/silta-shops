@@ -27,7 +27,7 @@ export const shops: Shop[] = [
     tagline: "Nešiojama šiluma Baltijos žiemai.",
     kicker: "Žiema · kūnas · kelias",
     heroTitle: "Žiema čia ilga. Šiluma turi keliauti su jumis.",
-    heroLead: "Šildančios šalikės, liemenės, kojinės, pirštinės ir rankų šildytuvai. Ne radiatorius — sluoksnis ant jūsų.",
+    heroLead: "Šildančios šalikės, kaklo lankas, striukės, liemenės, kojinės, pirštinės, šlepetės ir rankų šildytuvai. Ne radiatorius — sluoksnis ant jūsų.",
     heroCta: { label: "Šildanti šalikė · 34,90 €", to: "/p/sildanti-salike" },
     heroImage: "/images/hero-winter.jpg",
     email: "labas@silta.lt",
@@ -35,13 +35,13 @@ export const shops: Shop[] = [
     nav: [
       { label: "Katalogas", to: "/katalogas" },
       { label: "Šalikė", to: "/p/sildanti-salike" },
-      { label: "Liemenė", to: "/p/usb-sildoma-liemene" },
-      { label: "Dovanos", to: "/dovanos" },
+      { label: "Striukė", to: "/p/usb-sildoma-striuke" },
+      { label: "Šlepetės", to: "/p/sildancios-slepetes" },
     ],
     model: "Tik šildomi daiktai žiemai.",
     storyTitle: "Radiatorius šildo orą. Šitie — jus.",
     storyBody:
-      "ŠILTA yra tik apie šaltį: kaklas, rankos, kojos, liemuo, automobilio stiklas, rašymo stalas. Jokio dekoro, jokių dėžučių.",
+      "ŠILTA yra tik apie šaltį: kaklas, rankos, kojos, liemuo, striukė, šlepetės, automobilio stiklas, rašymo stalas. Jokio dekoro, jokių dėžučių.",
     topbar: "Šildomi žiemos daiktai · nemokamai į paštomatą nuo 39 €",
   },
   {
@@ -51,7 +51,7 @@ export const shops: Shop[] = [
     tagline: "Lempos, girliandos, eglės žaisliukai.",
     kicker: "Šviesa · LED · dekoro",
     heroTitle: "Snaigės ant sienos. Auksas ant eglės.",
-    heroLead: "LED lempos, girliandos, žvakės ir žaisliukai. Namai šviečia — ne spinta pilna megztinių.",
+    heroLead: "LED lempos, girliandos, žvakės, žvakidžiai, disko projektorius ir žaisliukai. Namai šviečia — ne spinta pilna megztinių.",
     heroCta: { label: "Saulėlydžio lempa · 27,90 €", to: "/p/saulilelytes-lempa" },
     heroImage: "/images/hero-lights.jpg",
     email: "labas@ziburys.lt",
@@ -65,7 +65,7 @@ export const shops: Shop[] = [
     model: "Tik šviesa ir dekoro.",
     storyTitle: "Šviesa pakeičia kambarį greičiau nei baldai.",
     storyBody:
-      "ŽIBURYS — projektoriai, LED girliandos, žvakės, eglės žaisliukai, saulėlydžio lempa. Jokios šildančios liemenės, jokių daiktadėžių.",
+      "ŽIBURYS — projektoriai, LED girliandos, žvakės, žvakidžiai, eglės žaisliukai, saulėlydžio, vandens ir disko lempos. Jokios šildančios liemenės, jokių daiktadėžių.",
     topbar: "Lempos, LED, žaisliukai · paštomatas nuo 39 €",
   },
   {
@@ -75,7 +75,7 @@ export const shops: Shop[] = [
     tagline: "Ramybė. Ir daiktai savo vietose.",
     kicker: "Namai · tvarka · oras",
     heroTitle: "Kambarys, į kurį norisi grįžti.",
-    heroLead: "Difuzorius, organizatoriai, laidų dėžės, lininės daiktadėžės. Tvarka, kuri atrodo ramiai — ne kaip sandėlis.",
+    heroLead: "Difuzorius, organizatoriai, plaukų dėžės, vėrinių dėžės, laidų dėžės, daiktadėžės. Tvarka, kuri atrodo ramiai — ne kaip sandėlis.",
     heroCta: { label: "Difuzorius · 29,90 €", to: "/p/difuzorius" },
     heroImage: "/images/hero-ramu.jpg",
     email: "labas@ramu.lt",
@@ -89,7 +89,7 @@ export const shops: Shop[] = [
     model: "Tik ramybė ir kambario tvarka.",
     storyTitle: "Pirma — oras. Paskui — vietos daiktams.",
     storyBody:
-      "RAMU nėra žiemos striukių ir nėra eglės girliandų. Čia kambarys susitvarko: kvapas, kosmetika, laidai, lentynos.",
+      "RAMU nėra žiemos striukių ir nėra eglės girliandų. Čia kambarys susitvarko: kvapas, kosmetika, plaukai, papuošalai, laidai, lentynos.",
     topbar: "Ramybė ir tvarka namuose · paštomatas nuo 39 €",
   },
 ];

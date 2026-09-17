@@ -18,10 +18,10 @@ export default function Hub() {
         <div className="wrap">
           <div className="kicker">Pagrindinis · HQ</div>
           <h1 style={{ fontSize: "clamp(36px, 6vw, 64px)", maxWidth: "16ch" }}>
-            Trys vitrinos. Vienas pultas.
+            Trys vitrinos. Užrakintas pultas.
           </h1>
           <p className="muted" style={{ maxWidth: "62ch", fontSize: 18, marginTop: 16 }}>
-            Reklamas vedate į parduotuvės domeną — ne čia. Čia nuorodos, užsakymai ir analitika.
+            Čia tik jūs. Klientai vitrinose HQ nuorodų nemato. Reklamas vedate tiesiai į parduotuvės domeną.
           </p>
           <div className="stat-grid" style={{ marginTop: 36 }}>
             <article className="stat-card">
@@ -72,7 +72,7 @@ export default function Hub() {
         <div className="wrap">
           <h2>Kelimas: skirtingi domenai</h2>
           <p className="muted" style={{ maxWidth: "62ch", marginTop: 12 }}>
-            Tas pats kodas. Domenas pasako, kuri vitrina. HQ lieka pagrindiniame adrese — klientai ten neina.
+            Tas pats kodas. Domenas pasako, kuri vitrina. Šitas pultas slepiamas slaptažodžiu — klientai čia neįeina.
           </p>
           <div className="grid-4" style={{ marginTop: 28 }}>
             <div>

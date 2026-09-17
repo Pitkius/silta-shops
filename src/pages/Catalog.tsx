@@ -1,31 +1,22 @@
-import { formatEur, shopProducts } from "../data/products";
+import { shopProducts } from "../data/products";
+import { ProductCard } from "../ProductCard";
 import { useHref, useShop } from "../useShop";
-import { Link } from "react-router-dom";
 
 export default function Catalog() {
   const shop = useShop();
   const href = useHref();
   const list = shopProducts(shop.id);
   return (
-    <section className="section">
+    <section className="section catalog-page">
       <div className="wrap">
-        <div className="kicker">{shop.wordmark}</div>
-        <h2>Katalogas</h2>
-        <p className="muted">{shop.model}</p>
-        <div className="grid-3">
+        <div className="catalog-head">
+          <div className="kicker">{shop.wordmark}</div>
+          <h2>Katalogas</h2>
+          <p className="muted">{shop.model}</p>
+        </div>
+        <div className={`grid-3 ${shop.id === "ziburys" ? "mosaic" : ""} ${shop.id === "ramu" ? "air" : ""}`}>
           {list.map((p) => (
-            <Link to={href(`/p/${p.slug}`)} className="card" key={p.slug}>
-              <img src={p.image} alt={p.name} />
-              <div className="card-body">
-                {p.badge && <span className="badge">{p.badge}</span>}
-                <strong>{p.name}</strong>
-                <span className="muted">{p.short}</span>
-                <div className="price">
-                  {formatEur(p.price)}
-                  <span className="compare">{formatEur(p.compareAt)}</span>
-                </div>
-              </div>
-            </Link>
+            <ProductCard key={p.slug} product={p} to={href(`/p/${p.slug}`)} />
           ))}
         </div>
       </div>

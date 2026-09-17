@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../cart";
 import { bundles, formatEur, getProduct } from "../data/products";
+import { Shot } from "../ProductCard";
 import { useHref, useShop } from "../useShop";
 
 export default function Gifts() {
@@ -17,7 +18,7 @@ export default function Gifts() {
         <div className="grid-3">
           {list.map((b) => (
             <div className="card" key={b.slug}>
-              <img src={getProduct(b.items[0])?.image} alt="" />
+              <Shot src={getProduct(b.items[0])?.image || ""} alt="" />
               <div className="card-body">
                 <strong>{b.name}</strong>
                 <span className="muted">{b.blurb}</span>

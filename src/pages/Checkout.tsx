@@ -11,8 +11,7 @@ import {
   formatEur,
   getProduct,
 } from "../data/products";
-import { hqHref } from "../sites";
-import { SmartLink, useHref, useShop } from "../useShop";
+import { useHref, useShop } from "../useShop";
 
 const banks = ["Swedbank", "SEB", "Luminor", "Revolut", "Apple Pay", "Kortelė"];
 
@@ -85,11 +84,7 @@ export default function Checkout() {
       <section className="section wrap">
         <div className="kicker">Užsakymas</div>
         <h2>Priėmėme {done}</h2>
-        <p>
-          Ačiū. Toliau užsakymą rasite{" "}
-          <SmartLink to={hqHref("/uzsakymai")}>užsakymų sąraše</SmartLink> — ten tiekėjo nuoroda ir pristatymo
-          adresas.
-        </p>
+        <p>Ačiū. Užsakymą priėmėme — laišką su detalemis atsiųsime nurodytu el. paštu.</p>
         <Link className="btn btn-ink" to={href("/katalogas")}>
           Grįžti
         </Link>
