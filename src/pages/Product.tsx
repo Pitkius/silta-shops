@@ -48,7 +48,16 @@ export default function Product() {
           {photos.length > 1 && (
             <div className="gallery-thumbs">
               {photos.map((src, i) => (
-                <button key={src} className={i === shot ? "on" : ""} onClick={() => setShot(i)} type="button">
+                <button
+                  key={src}
+                  className={i === shot ? "on" : ""}
+                  onClick={() => {
+                    setShot(i);
+                    const match = Object.entries(product.colorImages || {}).find(([, img]) => img === src);
+                    if (match) setColor(match[0]);
+                  }}
+                  type="button"
+                >
                   <span className="shot">
                     <img src={src} alt="" />
                   </span>
@@ -84,7 +93,18 @@ export default function Product() {
               <div className="muted">Spalva</div>
               <div className="swatches">
                 {product.colors.map((c) => (
-                  <button key={c} className={`chip ${c === color ? "on" : ""}`} onClick={() => setColor(c)}>
+                  <button
+                    key={c}
+                    className={`chip ${c === color ? "on" : ""}`}
+                    onClick={() => {
+                      setColor(c);
+                      const src = product.colorImages?.[c];
+                      if (src) {
+                        const i = photos.indexOf(src);
+                        if (i >= 0) setShot(i);
+                      }
+                    }}
+                  >
                     {c}
                   </button>
                 ))}

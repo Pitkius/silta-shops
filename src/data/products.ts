@@ -18,6 +18,7 @@ export type Product = {
   gallery: string[];
   badge?: string;
   colors?: string[];
+  colorImages?: Record<string, string>;
   sizes?: string[];
   weight: string;
   power: string;
@@ -44,10 +45,24 @@ export const products: Product[] = [
     short: "Kaklas šiltas per kelias sekundes. Telpa į kišenę.",
     price: 34.9,
     compareAt: 49.9,
-    image: "/images/product-scarf.jpg",
-    gallery: ["/images/product-scarf.jpg", "/images/product-scarf-2.jpg"],
+    image: "/images/product-scarf-navy.jpg",
+    gallery: [
+      "/images/product-scarf-navy.jpg",
+      "/images/product-scarf-black.jpg",
+      "/images/product-scarf-gray.jpg",
+      "/images/product-scarf-red.jpg",
+      "/images/product-scarf-pink.jpg",
+      "/images/product-scarf.jpg",
+    ],
     badge: "Perkamausia",
-    colors: ["Anglies juoda", "Pelenų pilka", "Bordo"],
+    colors: ["Tamsiai mėlyna", "Anglies juoda", "Pelenų pilka", "Bordo", "Rožinė"],
+    colorImages: {
+      "Tamsiai mėlyna": "/images/product-scarf-navy.jpg",
+      "Anglies juoda": "/images/product-scarf-black.jpg",
+      "Pelenų pilka": "/images/product-scarf-gray.jpg",
+      Bordo: "/images/product-scarf-red.jpg",
+      Rožinė: "/images/product-scarf-pink.jpg",
+    },
     weight: "200 g",
     power: "USB 5V · 3 temperatūros (42 / 48 / 55 °C)",
     features: [
@@ -169,7 +184,11 @@ export const products: Product[] = [
     compareAt: 49.9,
     image: "/images/product-socks.jpg",
     gallery: ["/images/product-socks.jpg", "/images/product-socks-2.jpg"],
-    colors: ["Tamsiai pilka"],
+    colors: ["Juoda", "Šviesiai pilka"],
+    colorImages: {
+      Juoda: "/images/product-socks.jpg",
+      "Šviesiai pilka": "/images/product-socks-2.jpg",
+    },
     sizes: ["S/M (36–40)", "L/XL (41–46)"],
     weight: "~280 g pora",
     power: "Išimami akumuliatoriai · 3 lygiai",
@@ -288,8 +307,18 @@ export const products: Product[] = [
     price: 39.9,
     compareAt: 54.9,
     image: "/images/product-gloves.jpg",
-    gallery: ["/images/product-gloves.jpg", "/images/product-gloves-2.jpg", "/images/product-gloves-3.jpg"],
-    colors: ["Juoda"],
+    gallery: [
+      "/images/product-gloves.jpg",
+      "/images/product-gloves-black.jpg",
+      "/images/product-gloves-pink.jpg",
+      "/images/product-gloves-2.jpg",
+    ],
+    colors: ["Melanžas", "Juoda", "Rožinė"],
+    colorImages: {
+      Melanžas: "/images/product-gloves.jpg",
+      Juoda: "/images/product-gloves-black.jpg",
+      Rožinė: "/images/product-gloves-pink.jpg",
+    },
     sizes: ["S/M", "L/XL"],
     weight: "~180 g",
     power: "USB 5V arba išimami akumuliatoriai",
@@ -503,7 +532,7 @@ export const products: Product[] = [
     price: 32.9,
     compareAt: 49.9,
     image: "/images/product-snow-projector.jpg",
-    gallery: ["/images/product-snow-projector.jpg"],
+    gallery: ["/images/product-snow-projector.jpg", "/images/product-snow-2.jpg"],
     badge: "Kalėdos",
     colors: ["Juoda · EU kištukas"],
     weight: "~400 g",
@@ -809,7 +838,11 @@ export const products: Product[] = [
       "/images/product-cablebox-3.jpg",
       "/images/product-cablebox-4.jpg",
     ],
-    colors: ["Smėlio", "Pilka"],
+    colors: ["Antracitas", "Baltas"],
+    colorImages: {
+      Antracitas: "/images/product-cablebox.jpg",
+      Baltas: "/images/product-cablebox-2.jpg",
+    },
     weight: "~450 g",
     power: "Be elektros — tik dėžė",
     features: [
@@ -1120,9 +1153,13 @@ export const products: Product[] = [
     price: 34.9,
     compareAt: 49.9,
     image: "/images/product-slippers.jpg",
-    gallery: ["/images/product-slippers.jpg"],
+    gallery: ["/images/product-slippers.jpg", "/images/product-slippers-black.jpg"],
     badge: "Nauja",
-    colors: ["Pilka / kreminė"],
+    colors: ["Pilka / kreminė", "Juoda"],
+    colorImages: {
+      "Pilka / kreminė": "/images/product-slippers.jpg",
+      Juoda: "/images/product-slippers-black.jpg",
+    },
     sizes: ["36–39", "40–43", "44–46"],
     weight: "~450 g pora",
     power: "USB 5V · 3 lygiai · powerbankas NEįeina",
@@ -1328,9 +1365,18 @@ export const products: Product[] = [
     price: 24.9,
     compareAt: 36.9,
     image: "/images/product-jewelry-2.jpg",
-    gallery: ["/images/product-jewelry-2.jpg", "/images/product-jewelry-3.jpg", "/images/product-jewelry.jpg"],
+    gallery: [
+      "/images/product-jewelry-2.jpg",
+      "/images/product-jewelry.jpg",
+      "/images/product-jewelry-3.jpg",
+    ],
     badge: "Tvarka",
     colors: ["Riešutas", "Juoda", "Pilka"],
+    colorImages: {
+      Riešutas: "/images/product-jewelry-2.jpg",
+      Juoda: "/images/product-jewelry.jpg",
+      Pilka: "/images/product-jewelry.jpg",
+    },
     weight: "~800 g",
     power: "Be elektros",
     features: [

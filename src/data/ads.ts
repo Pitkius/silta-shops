@@ -81,7 +81,7 @@ export const ads: Ad[] = [
     description: "ŠILTA · Lietuva · paštomatas",
     cta: "Learn more",
     script: ["Statinis 1:1: šalikė + šildytuvai + pirštinės. Kaina ir paštomatas viršuje."],
-    image: "/images/product-scarf-2.jpg",
+    image: "/images/product-scarf.jpg",
     ratio: "1:1",
   },
   {
@@ -127,7 +127,7 @@ export const ads: Ad[] = [
     description: "Nemokamai į paštomatą",
     cta: "Shop now",
     script: ["Nenaudoti netikrų −70 %. Viena tikra kaina, viena data."],
-    image: "/images/product-scarf-2.jpg",
+    image: "/images/product-scarf.jpg",
     ratio: "1:1",
   },
   {
